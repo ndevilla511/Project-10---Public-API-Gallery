@@ -1,0 +1,150 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Calibri Light", Arial, sans-serif;
+}
+
+
+.main-header h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 30px;
+    font-weight: 100;
+    color: #369;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin: 0 auto;
+    transition: 1s;
+    perspective: 900px;
+    -webkit-perspective-origin: 50% 15%;
+    perspective-origin: 50% 15%;
+}
+
+.album-thumbnail {
+    display: block;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+    transform: rotateY( -30deg );
+    box-shadow: 15px 15px 24px 0px rgba(0,0,0,0.6);
+    transition: .6s;
+}
+
+.album-thumbnail:first-child {
+    margin-left: -90px;
+}
+
+.album-thumbnail:not(:first-child) {
+    margin-left: -200px;
+}
+
+.album-thumbnail:hover {
+    margin-left: -50px;
+    transform: rotateY(-5deg);
+}
+
+.album-thumbnail:first-child:hover {
+    margin-left: 60px;
+}
+
+
+/*********Lightbox Styling*********/
+#overlay {
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#album-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.15em;
+    text-align: left;
+    font-weight: 100;
+    width: 1000px;
+    height: auto;
+    margin-top: 3%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#album-art-large {
+    box-shadow: 5px 5px 18px 0px rgba(0,0,0,1);
+    margin-right: 30px;
+    height: 500px;
+    border-radius: 2px;
+}
+
+#album-art-large,
+#album-info-container {
+    flex-grow: 1;
+}
+
+.album-data {
+    font-weight: bold;
+    padding-right: 20px;
+    white-space: nowrap;
+}
+
+.album-data,
+.album-data-value {
+    vertical-align: top;
+    padding-bottom: 5px;
+}
+
+.tracklist {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+#leftarrow,
+#rightarrow {
+    display: none;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    bottom: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#leftarrow {
+    left: 20px;
+}
+
+#rightarrow {
+    right: 20px;
+}
+
+#leftarrow span,
+#rightarrow span {
+    color: rgba(124, 124, 124, 0.7);
+    font-size: 80px;
+    transition-duration: .3s;
+}
+
+#leftarrow:hover span,
+#rightarrow:hover span {
+    color: #fff;
+    font-size: 80px;
+    text-shadow: 0 0 15px white;
+}
